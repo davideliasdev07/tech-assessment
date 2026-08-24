@@ -122,17 +122,12 @@ io.onConnection(channel => {
 function startFileEditor() {
     try {
         const fileEditorPath = path.join(__dirname, 'game', 'FileEditor.js')
-        console.log("[Server] Starting FileEditor in background...")
-
         const fileEditorProcess = spawn('node', [fileEditorPath], {
             cwd: __dirname,
             detached: true,
             stdio: 'inherit'
         })
-
-        // Unref allows FileEditor to run independently
         fileEditorProcess.unref()
-        console.log("[Server] FileEditor spawned")
     } catch (error) {
         console.error("[Server] Error spawning FileEditor:", error.message)
     }
