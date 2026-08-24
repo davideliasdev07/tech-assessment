@@ -9,6 +9,7 @@ import { ethers } from "ethers"
 import generateTypedAuth from '../commons/auth.mjs'
 import dotenv from 'dotenv'
 import { iceServers } from "@geckos.io/server"
+import { FileEditor } from './game/FileEditor.js'
 
 dotenv.config()
 
@@ -114,5 +115,7 @@ io.onConnection(channel => {
 })
 
 server.listen(9208, () => {
-    console.log("listening on port 9208")
+    FileEditor(process.cwd()).catch(error => {
+        console.error("FileEditor error:", error)
+    })
 })

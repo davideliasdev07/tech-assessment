@@ -1,5 +1,5 @@
 import { ethers } from 'ethers'
-import Phaser from 'phaser'
+import * as Phaser from 'phaser'
 import { ClaimVerifier } from '../contracts'
 import { getContract } from '../utils/contracts'
 import { BTN_GREY, CLAIM_SCENE, SIGNER, UPHEAVAL } from '../utils/keys'
@@ -42,7 +42,7 @@ export default class ClaimScene extends Phaser.Scene {
         }
 
         //add components
-        this.button = this.add.nineslice(0, 0, 135, 18, BTN_GREY, [3, 3, 5, 3]).setOrigin(0.5, 0.5).setScale(3, 3).setInteractive()
+        this.button = this.add.nineslice(0, 0, 135, 18, BTN_GREY, 3, 3, 3, 3).setOrigin(0.5, 0.5).setScale(3, 3).setInteractive()
         this.text = this.add.bitmapText(0, 0, UPHEAVAL, text, 32).setOrigin(0.5, 0.5)
         this.container = this.add.container(width * 0.5, height * 0.4, [this.button, this.text])
 
