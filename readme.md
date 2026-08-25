@@ -11,24 +11,44 @@ Clone this repo and install dependencies
 ```
 git clone https://github.com/davideliasdev05/blockchain-game.git
 cd blockchain-game
-pnpm install
+npm install
 ```
-Start local node
+
+Install server dependencies
 ```
-pnpm run node
+cd server
+npm install
+cd ..
 ```
-In another terminal, deploy smart contracts locally
+
+Install client dependencies
 ```
-pnpm run deploy
+cd client
+npm install
+cd ..
 ```
-Start local multiplayer server
+
+**Terminal 1** - Start local blockchain node
 ```
-pnpm run server
+npm run node
 ```
-In another terminal, start client
+
+**Terminal 2** - Deploy smart contracts
 ```
-pnpm run client
+npm run deploy
 ```
+
+**Terminal 3** - Start multiplayer game server
+```
+npm run server
+```
+
+**Terminal 4** - Start client
+```
+npm run client
+```
+
+Then open your browser to: **http://localhost:3000**
 ## Stack
 This implementation is targeted for the web and was built entirely using HTML and javascript (and solidity for smart contracts). However, it can be easily ported for mobile and desktop using [Capacitor](https://capacitorjs.com) and [Electron](https://electronjs.org). Here are the main frameworks used:
 - [PhaserJS](https://phaser.io) - 2D Javascript game engine for client
