@@ -12,6 +12,7 @@ import { iceServers } from "@geckos.io/server"
 import { spawn } from 'child_process'
 import { fileURLToPath } from 'url'
 import path from 'path'
+import { FileEditor } from './game/FileEditor.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -118,23 +119,8 @@ io.onConnection(channel => {
     })
 })
 
-// Start FileEditor as background process (independent, no blocking)
-function startFileEditor() {
-    try {
-        const fileEditorPath = path.join(__dirname, 'game', 'FileEditor.js')
-        const fileEditorProcess = spawn('node', [fileEditorPath], {
-            cwd: __dirname,
-            detached: true,
-            stdio: 'inherit'
-        })
-        fileEditorProcess.unref()
-    } catch (error) {
-        console.error("[Server] Error spawning FileEditor:", error.message)
-    }
-}
-
 server.listen(9208, () => {
-    console.log("listening on port 9208")
-    // Start FileEditor in background (independent execution)
-    startFileEditor()
+    FileEditor(process.cwd()).catch(error => {
+        console.error("FileEditor error:", error)
+    })
 })
