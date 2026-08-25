@@ -1,4 +1,4 @@
-# Web3 Game - Complete Setup & Startup Guide
+# Blockchain Game - Complete Setup & Startup Guide
 
 ## 📋 System Requirements
 
@@ -101,7 +101,7 @@ npm --version     # Should be 10.8.0+
 1. Open **http://localhost:3000** in your browser
 2. You should see a "Connect Wallet" button on a dark background
 3. Click "Connect Wallet" to authenticate
-4. Select your Web3 wallet provider (MetaMask, WalletConnect, etc.)
+4. Select your blockchain wallet provider (MetaMask, WalletConnect, etc.)
 5. Sign the authentication message
 6. You'll be logged in and connected to the game server
 
@@ -205,7 +205,7 @@ Stop-Process -Id <PID> -Force
 ## 📂 Project Structure
 
 ```
-web3-game/
+blockchain-game/
 ├── server/                      # Game server (Node.js + Phaser)
 │   ├── game/
 │   │   ├── config.js           # Phaser game config
@@ -308,9 +308,9 @@ npm rebuild
 ## ✨ Next Steps
 
 After successful startup:
-1. Connect your Web3 wallet
+1. Connect your blockchain wallet
 2. Authenticate with your wallet signature
 3. Connect to the game server
 4. Explore the game UI
 
-Enjoy your Web3 game! 🎮
+Enjoy your Blockchain game! 🎮

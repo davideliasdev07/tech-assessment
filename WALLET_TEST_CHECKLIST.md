@@ -4,7 +4,7 @@
 
 - [ ] MetaMask installed and enabled
   - Download from: https://metamask.io/
-  - Or use another Web3 wallet (WalletConnect, etc.)
+  - Or use another blockchain wallet (WalletConnect, etc.)
 
 - [ ] Browser is Chrome, Firefox, Edge, or Safari
   - MetaMask works best with these browsers
@@ -41,7 +41,7 @@ http://localhost:9208/signer
 ✅ Expected: You see an Ethereum address displayed
 ❌ If error: Server not running or port blocked
 
-### Step 2: Open Web3 Game
+### Step 2: Open Blockchain Game
 In browser address bar, visit:
 ```
 http://localhost:3000

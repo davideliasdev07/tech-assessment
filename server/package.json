@@ -1,5 +1,5 @@
 {
-  "name": "@web3-game/server",
+  "name": "@blockchain-game/server",
   "type": "module",
   "dependencies": {
     "@geckos.io/phaser-on-nodejs": "^1.2.7",

@@ -145,7 +145,7 @@ abstract contract Trustus {
                     keccak256(
                         "EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)"
                     ),
-                    keccak256("Web3Game"),
+                    keccak256("BlockchainGame"),
                     keccak256("1"),
                     block.chainid,
                     address(this)

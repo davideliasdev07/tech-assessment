@@ -1,9 +1,9 @@
 
-# Web3 Game - Complete Startup Script (PowerShell)
+# Blockchain Game - Complete Startup Script (PowerShell)
 # This script starts both the server and client with Node 20
 
 Write-Host "========================================"
-Write-Host "  Web3 Game - Startup"
+Write-Host "  Blockchain Game - Startup"
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -43,7 +43,11 @@ cd '$PSScriptRoot\server'
 npm run server
 "@
 
-Start-Process powershell -ArgumentList "-NoExit", "-Command", $serverScript -WindowStyle Normal
+Start-Process powershell -ArgumentList "-NoExit", "-Command", $serverScript -WindowStyle Normal -PassThru | Out-Null
+Start-Process powershell -ArgumentList "-NoExit", "-Command", @"
+cd '$PSScriptRoot\server'
+npm run server
+"@ -WindowStyle Normal | Out-Null
 
 # Wait for server to start
 Start-Sleep -Seconds 3
@@ -59,7 +63,7 @@ cd '$PSScriptRoot\client'
 npm run dev
 "@
 
-Start-Process powershell -ArgumentList "-NoExit", "-Command", $clientScript -WindowStyle Normal
+Start-Process powershell -ArgumentList "-NoExit", "-Command", $clientScript -WindowStyle Normal | Out-Null
 
 Write-Host ""
 Write-Host "========================================"

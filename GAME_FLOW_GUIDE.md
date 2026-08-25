@@ -157,7 +157,7 @@ http://localhost:3000
 #### Step 3: Connect Wallet
 1. **Click "CONNECT WALLET"**
    - Console shows: `[Button] Connect button clicked`
-   - Web3Modal appears
+   - Blockchain Modal appears
 
 2. **Click MetaMask** in Web3Modal
    - MetaMask extension opens
@@ -425,4 +425,4 @@ npm run dev
 http://localhost:3000
 ```
 
-Then enjoy your Web3 game! 🎮🎉
+Then enjoy your Blockchain game! 🎮🎉

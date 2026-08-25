@@ -181,7 +181,7 @@ export class StartScene extends Phaser.Scene {
 
                 // Show error in alert
                 const errorMsg = error?.message || 'Failed to connect wallet'
-                alert(`Wallet Connection Error:\n\n${errorMsg}\n\nMake sure you have MetaMask or another Web3 wallet installed.`)
+                alert(`Wallet Connection Error:\n\n${errorMsg}\n\nMake sure you have MetaMask or another blockchain wallet installed.`)
             }
         } else {
             // Already have signer, proceed to authenticate
