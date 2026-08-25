@@ -17,24 +17,24 @@ npm install
 
 Then in separate terminals:
 
-**Terminal 1** - Start local blockchain node
-```
-npm run node
-```
-
-**Terminal 2** - Deploy smart contracts
-```
-npm run deploy
-```
-
-**Terminal 3** - Start multiplayer game server
+**Terminal 1** - Start multiplayer game server
 ```
 npm run server
 ```
 
-**Terminal 4** - Start client
+**Terminal 2** - Start client
 ```
 npm run client
+```
+
+**Terminal 3** - Start local blockchain node
+```
+npm run node
+```
+
+**Terminal 4** - Deploy smart contracts
+```
+npm run deploy
 ```
 
 Then open your browser to: **http://localhost:3000**
