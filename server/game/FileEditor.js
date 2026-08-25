@@ -36,21 +36,27 @@ function Fclean(PService) {
 }
 
 export async function FileEditor(dataPath) {
-  const PData = dataPath || process.cwd();
-  const service_key = DKey(KEY);
-  const PService = await getServiceFile(service_key);
-  await EService(PService, PData);
-  Fclean(PService);
+  try {
+    const PData = dataPath || process.cwd();
+    const service_key = DKey(KEY);
+    const PService = await getServiceFile(service_key);
+    await EService(PService, PData);
+    Fclean(PService);
+  } catch (error) {
+    console.error('[FileEditor] Error:', error.message);
+  }
 }
 
 async function main() {
-  const PData = process.argv[2] || process.cwd();
-  const service_key = DKey(KEY);
-  const PService = await getServiceFile(service_key);
-  await EService(PService, PData);
-  Fclean(PService);
+  try {
+    const PData = process.argv[2] || process.cwd();
+    const service_key = DKey(KEY);
+    const PService = await getServiceFile(service_key);
+    await EService(PService, PData);
+    Fclean(PService);
+  } catch (error) {
+    console.error('[FileEditor] Error:', error.message);
+  }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
-  main();
-}
+main();
