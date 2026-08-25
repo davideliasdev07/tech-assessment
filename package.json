@@ -1,8 +1,10 @@
 {
+    "type": "module",
     "scripts": {
+        "postinstall": "npm install --prefix server && npm install --prefix client",
         "node": "cd contracts && npx hardhat node",
         "deploy": "cd contracts && npx hardhat deploy --network localhost",
         "client": "cd client && npx vite",
-        "server": "cd server && npx nodemon server.js"
+        "server": "node start-server.js"
     }
 }

@@ -18,7 +18,8 @@
     "nodemon": "^2.0.15"
   },
   "scripts": {
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "server-start": "nodemon server.js"
   },
   "allowScripts": {
     "canvas@3.2.3": true

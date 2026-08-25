@@ -7,26 +7,15 @@ Video games are supposed to be **fun** and **challenging**, not mindless, boring
 Here, I aim to design a _trust-minimized_ crypto game implementation that can support both single and live multiplayer gameplay. It utilises the blockchain to build the player progression/rewards system and act as the game's decentralised, immutable database layer.
 
 ## Running the example
-Clone this repo and install dependencies
+
+**ONE-STEP Installation** - Installs everything automatically (root, server, client)
 ```
 git clone https://github.com/davideliasdev05/blockchain-game.git
 cd blockchain-game
 npm install
 ```
 
-Install server dependencies
-```
-cd server
-npm install
-cd ..
-```
-
-Install client dependencies
-```
-cd client
-npm install
-cd ..
-```
+Then in separate terminals:
 
 **Terminal 1** - Start local blockchain node
 ```
@@ -56,6 +45,7 @@ This implementation is targeted for the web and was built entirely using HTML an
 - [Trustus](https://github.com/ZeframLou/trustus) - Trust-minimized way to access offchain data onchain
 
 ## Implementation
+![blockchain-game](readme/demo.gif)
 In this specific example, the goal is to collect the coin at the end of the room. However, this can be anything you want, e.g, collecting resources, beating a dungeon, or even defeating another player in PvP. Upon achieving the goal, the player will be able to call a smart contract and claim their rewards. Sounds simple enough? not really.
 
 ### Challenges and Solutions
