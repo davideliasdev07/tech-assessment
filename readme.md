@@ -8,8 +8,8 @@ Here, I aim to design a _trust-minimized_ crypto game implementation that can su
 
 ## Requirements
 
-- **Node.js**: v20.0.0 or higher (tested with v20 and v24)
-- **npm**: v10.0.0 or higher
+- **Node.js**: v20.0.0 or higher (tested with v20, v24, and v26+)
+- **npm**: v10.0.0 or higher (v11+ recommended for Node 26)
 - **Git**: For cloning the repository
 
 ## Installation & Running

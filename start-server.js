@@ -9,7 +9,7 @@ const serverProcess = spawn('npm', ['run', 'server'], {
     stdio: 'inherit',
     windowsHide: true,
     detached: false,
-    shell: true
+    shell: process.platform === 'win32'
 })
 
 process.on('SIGINT', () => {

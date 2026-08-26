@@ -2,8 +2,8 @@
 
 ## 📋 System Requirements
 
-- **Node.js**: 20.x LTS (Required for canvas native module compatibility)
-- **npm**: 10.8.0 or higher (Required for git dependency support)
+- **Node.js**: v20.0.0 or higher (Tested with v20 LTS, v24, and v26+)
+- **npm**: v10.0.0 or higher (v11+ recommended for Node 26)
 - **Git**: For cloning repositories
 - **Browser**: Modern browser with WebRTC support (Chrome, Firefox, Edge, Safari)
 
