@@ -7,5 +7,13 @@
         "client": "cd client && npx vite",
         "server": "node start-server.js",
         "install-server": "npm install --prefix server --include=dev"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.14"
+    },
+    "dependencies": {
+        "@geckos.io/phaser-on-nodejs": "^1.3.1",
+        "@geckos.io/server": "^3.1.0",
+        "phaser": "^4.2.1"
     }
 }
