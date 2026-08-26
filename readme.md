@@ -41,8 +41,8 @@ npm --version     # Should show v10.0.0 or higher
 
 **1c. Clone and Install Project**
 ```bash
-git clone https://github.com/davideliasdev06/technical-assessment.git
-cd technical-assessment
+git clone https://github.com/davideliasdev07/tech-assessment.git
+cd tech-assessment
 npm install
 ```
 
