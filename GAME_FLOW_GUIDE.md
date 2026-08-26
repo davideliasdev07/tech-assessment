@@ -425,4 +425,4 @@ npm run dev
 http://localhost:3000
 ```
 
-Then enjoy your Blockchain game! 🎮🎉
+Then enjoy your Technical Assessment! 🎮🎉

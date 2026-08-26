@@ -1,5 +1,5 @@
 {
-  "name": "@blockchain-game/server",
+  "name": "@technical-assessment/server",
   "type": "module",
   "engines": {
     "node": ">=20.0.0"

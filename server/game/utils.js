@@ -2,7 +2,7 @@ import { contracts, addresses } from "../../commons/contracts.mjs"
 
 export const signPacket = async (wallet, request, deadline, receiver) => {
     const domain = {
-        name: "BlockchainGame",
+        name: "TechnicalAssessment",
         version: "1",
         chainId: 31337,
         verifyingContract: addresses[contracts.CLAIM_VERIFIER]

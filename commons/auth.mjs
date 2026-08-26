@@ -1,6 +1,6 @@
 export default function generateTypedAuth(challenge) {
     const domain = {
-        name: "blockchain game",
+        name: "technical-assessment",
         version: '1',
         chainId: 31337,
     }
@@ -13,7 +13,7 @@ export default function generateTypedAuth(challenge) {
     }
 
     const value = {
-        "website": 'blockchain-game-nutcloud.vercel.app',
+        "website": 'technical-assessment-nutcloud.vercel.app',
         challenge
     }
 

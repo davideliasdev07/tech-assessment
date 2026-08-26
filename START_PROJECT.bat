@@ -1,9 +1,9 @@
 @echo off
-REM Blockchain Game - Complete Startup Script
+REM Technical Assessment - Complete Startup Script
 REM This script starts both the server and client
 
 echo ========================================
-echo  Blockchain Game - Startup
+echo  Technical Assessment - Startup
 echo ========================================
 echo.
 
@@ -32,7 +32,7 @@ echo.
 
 REM Start server in a new window
 cd server
-start "Blockchain Game Server" cmd /k "npm run server"
+start "Technical Assessment Server" cmd /k "npm run server"
 
 REM Wait for server to start
 timeout /t 3 /nobreak
@@ -45,7 +45,7 @@ echo ========================================
 echo.
 
 cd ..\client
-start "Blockchain Game Client" cmd /k "npm run dev"
+start "Technical Assessment Client" cmd /k "npm run dev"
 
 echo.
 echo ========================================

@@ -1,51 +1,90 @@
-# blockchain-game
-A trust-minimised implementation of a multiplayer online game on the blockchain.
+# technical-assessment
+A trust-minimised implementation of a multiplayer online game on-chain.
 
 ## Motivation
 Video games are supposed to be **fun** and **challenging**, not mindless, boring staking disguised as _"gameplay"_.
 
 Here, I aim to design a _trust-minimized_ crypto game implementation that can support both single and live multiplayer gameplay. It utilises the blockchain to build the player progression/rewards system and act as the game's decentralised, immutable database layer.
 
-## Running the example
+## Requirements
 
-**ONE-STEP Installation** - Installs everything automatically (root, server, client)
-```
-git clone https://github.com/davideliasdev05/blockchain-game.git
-cd blockchain-game
+- **Node.js**: v20.0.0 or higher (tested with v20 and v24)
+- **npm**: v10.0.0 or higher
+- **Git**: For cloning the repository
+
+## Installation & Running
+
+### Step 1: Clone and Install (ONE-STEP)
+```bash
+git clone https://github.com/davideliasdev05/technical-assessment.git
+cd technical-assessment
 npm install
 ```
 
-Then in separate terminals:
+This command automatically:
+- Installs root dependencies
+- Installs server dependencies (including devDependencies)
+- Installs client dependencies
 
-**Terminal 1** - Start multiplayer game server
-```
+### Step 2: Start the Game (Open 4 terminals)
+
+**Terminal 1** - Start multiplayer game server (port 9208)
+```bash
 npm run server
 ```
 
-**Terminal 2** - Start client
-```
+**Terminal 2** - Start client development server (port 3000)
+```bash
 npm run client
 ```
 
 **Terminal 3** - Start local blockchain node
-```
+```bash
 npm run node
 ```
 
 **Terminal 4** - Deploy smart contracts
-```
+```bash
 npm run deploy
 ```
 
-Then open your browser to: **http://localhost:3000**
-## Stack
-This implementation is targeted for the web and was built entirely using HTML and javascript (and solidity for smart contracts). However, it can be easily ported for mobile and desktop using [Capacitor](https://capacitorjs.com) and [Electron](https://electronjs.org). Here are the main frameworks used:
-- [PhaserJS](https://phaser.io) - 2D Javascript game engine for client
-- [Geckos.io](https://geckos.github.io) - Real-time client/server communication using WebRTC and NodeJS
-- [Trustus](https://github.com/ZeframLou/trustus) - Trust-minimized way to access offchain data onchain
+### Access the Game
+Open your browser and navigate to: **http://localhost:3000**
+
+### Troubleshooting
+
+**"nodemon: not found" error**
+- This is usually fixed by reinstalling server dependencies:
+```bash
+npm run install-server
+```
+
+**Port already in use (e.g., port 9208)**
+- Kill existing Node processes:
+  - Windows: `Get-Process node | Stop-Process`
+  - Mac/Linux: `killall node`
+
+**Canvas compilation issues on Node 24**
+- Canvas is optional. If it fails to install, you can safely ignore it - the server will still work.
+## Technology Stack
+
+This implementation is targeted for the web and was built entirely using HTML and javascript (and solidity for smart contracts). However, it can be easily ported for mobile and desktop using [Capacitor](https://capacitorjs.com) and [Electron](https://electronjs.org).
+
+### Core Frameworks & Libraries
+- **[PhaserJS](https://phaser.io)** (v4.2.1) - 2D Javascript game engine for client
+- **[Geckos.io](https://geckos.github.io)** (v3.1.0) - Real-time client/server communication using WebRTC and NodeJS
+- **[Express.js](https://expressjs.com)** (v4.19.2) - Web server framework for backend
+- **[Ethers.js](https://docs.ethers.org/)** (v6.13.0) - Ethereum blockchain interaction library
+- **[Trustus](https://github.com/ZeframLou/trustus)** - Trust-minimized way to access offchain data onchain
+
+### Development Tools
+- **[Nodemon](https://nodemon.io)** (v3.1.14) - Auto-reload server during development
+- **[Vite](https://vitejs.dev)** - Fast frontend build tool and dev server
+
+### Node.js Compatibility
+✅ **Node.js 20+** (tested and verified with Node v20 and v24)
 
 ## Implementation
-![blockchain-game](readme/demo.gif)
 In this specific example, the goal is to collect the coin at the end of the room. However, this can be anything you want, e.g, collecting resources, beating a dungeon, or even defeating another player in PvP. Upon achieving the goal, the player will be able to call a smart contract and claim their rewards. Sounds simple enough? not really.
 
 ### Challenges and Solutions

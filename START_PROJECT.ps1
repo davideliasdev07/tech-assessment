@@ -1,9 +1,9 @@
 
-# Blockchain Game - Complete Startup Script (PowerShell)
+# Technical Assessment - Complete Startup Script (PowerShell)
 # This script starts both the server and client with Node 20
 
 Write-Host "========================================"
-Write-Host "  Blockchain Game - Startup"
+Write-Host "  Technical Assessment - Startup"
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 

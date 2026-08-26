@@ -1,4 +1,4 @@
-# Blockchain Game - Complete Setup & Startup Guide
+# Technical Assessment - Complete Setup & Startup Guide
 
 ## 📋 System Requirements
 
@@ -205,7 +205,7 @@ Stop-Process -Id <PID> -Force
 ## 📂 Project Structure
 
 ```
-blockchain-game/
+technical-assessment/
 ├── server/                      # Game server (Node.js + Phaser)
 │   ├── game/
 │   │   ├── config.js           # Phaser game config
@@ -313,4 +313,4 @@ After successful startup:
 3. Connect to the game server
 4. Explore the game UI
 
-Enjoy your Blockchain game! 🎮
+Enjoy your technical assessment! 🎮

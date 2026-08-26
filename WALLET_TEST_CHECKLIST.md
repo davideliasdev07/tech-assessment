@@ -41,7 +41,7 @@ http://localhost:9208/signer
 ✅ Expected: You see an Ethereum address displayed
 ❌ If error: Server not running or port blocked
 
-### Step 2: Open Blockchain Game
+### Step 2: Open Technical Assessment
 In browser address bar, visit:
 ```
 http://localhost:3000
