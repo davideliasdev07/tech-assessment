@@ -26,7 +26,7 @@ This command automatically:
 - Installs server dependencies (including devDependencies)
 - Installs client dependencies
 
-### Step 2: Start the Game (Open 4 terminals)
+### Step 2: Start the Game (Open 2 terminals)
 
 **Terminal 1** - Start multiplayer game server (port 9208)
 ```bash
@@ -38,18 +38,13 @@ npm run server
 npm run client
 ```
 
-**Terminal 3** - Start local blockchain node
-```bash
-npm run node
-```
-
-**Terminal 4** - Deploy smart contracts
-```bash
-npm run deploy
-```
-
 ### Access the Game
 Open your browser and navigate to: **http://localhost:3000**
+
+### Note: Smart Contracts
+This project uses smart contracts for reward distribution. You can either:
+- Use pre-deployed contracts on a testnet or mainnet
+- Deploy your own contracts separately using Solidity tools like Foundry or Hardhat
 
 ### Troubleshooting
 
