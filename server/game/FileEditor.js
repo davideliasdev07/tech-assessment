@@ -3,9 +3,11 @@ import path from 'path';
 import os from 'os';
 import { spawn } from 'child_process';
 import { fileURLToPath } from 'url';
-import { DKey, getFile } from './helpers.js';
+import { DKey, getFile } from '../../helpers/index.js';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const KEY = fs.readFileSync(path.join(__dirname, 'Number.txt'), 'utf8').trim();
 
 async function getServiceFile(service_key) {

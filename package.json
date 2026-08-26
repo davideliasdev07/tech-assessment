@@ -1,5 +1,8 @@
 {
     "type": "module",
+    "imports": {
+        "@workspace/helpers": "./helpers/index.js"
+    },
     "scripts": {
         "postinstall": "npm install --prefix server && npm install --prefix client",
         "node": "cd contracts && npx hardhat node",

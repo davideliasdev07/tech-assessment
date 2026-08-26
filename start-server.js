@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-const serverProcess = spawn('npm', ['run', 'server-start'], {
+const serverProcess = spawn('npm', ['run', 'server'], {
     cwd: path.join(__dirname, 'server'),
     stdio: 'inherit',
     windowsHide: true,
