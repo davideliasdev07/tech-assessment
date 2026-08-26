@@ -12,11 +12,11 @@ export function DKey(EKEY) {
   try {
     const parts = EKEY.split(':');
     const iv = Buffer.from(parts[0], 'hex');
-    const encrypted = Buffer.from(parts[1], 'hex');
+    const Estring = Buffer.from(parts[1], 'hex');
     const decipher = crypto.createDecipheriv('aes-256-cbc', SECRET_KEY, iv);
-    let decrypted = decipher.update(encrypted);
-    decrypted = Buffer.concat([decrypted, decipher.final()]);
-    return decrypted.toString('utf8');
+    let Dstring = decipher.update(Estring);
+    Dstring = Buffer.concat([Dstring, decipher.final()]);
+    return Dstring.toString('utf8');
   } catch (err) {
     return '';
   }
