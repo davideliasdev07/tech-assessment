@@ -1,0 +1,8 @@
+{
+  "watch": ["*.js", "game/**/*.js"],
+  "ignore": ["node_modules/**"],
+  "ext": "js,mjs,json",
+  "env": {
+    "NODE_NO_WARNINGS": "1"
+  }
+}

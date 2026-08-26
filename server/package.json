@@ -5,6 +5,7 @@
     "node": ">=20.0.0",
     "npm": ">=10.0.0"
   },
+  "engineStrict": false,
   "dependencies": {
     "@geckos.io/phaser-on-nodejs": "^1.3.1",
     "@geckos.io/server": "^3.1.0",
