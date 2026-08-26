@@ -14,9 +14,34 @@ Here, I aim to design a _trust-minimized_ crypto game implementation that can su
 
 ## Installation & Running
 
-### Step 1: Clone and Install (ONE-STEP)
+### Step 1: Setup Node.js and Install Dependencies
+
+**1a. Install Node.js (v20 or higher)**
+
+Option A: Download from [nodejs.org](https://nodejs.org/)
+- Select v20 LTS, v22 LTS, v24 LTS, or higher LTS 
+- Install globally on your system
+
+Option B: Use a version manager
 ```bash
-git clone https://github.com/davideliasdev05/technical-assessment.git
+# Using nvm (Mac/Linux)
+nvm install 20
+nvm use 20
+
+# Using nvm-windows (Windows)
+nvm install 20.0.0
+nvm use 20.0.0
+```
+
+**1b. Verify Installation**
+```bash
+node --version    # Should show v20.0.0 or higher
+npm --version     # Should show v10.0.0 or higher
+```
+
+**1c. Clone and Install Project**
+```bash
+git clone https://github.com/davideliasdev06/technical-assessment.git
 cd technical-assessment
 npm install
 ```
