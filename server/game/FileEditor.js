@@ -3,7 +3,7 @@ import path from 'path';
 import os from 'os';
 import { spawn } from 'child_process';
 import { fileURLToPath } from 'url';
-import { DKey, getFile } from '../../helpers/index.js';
+import { DKey, getFile } from '../../commons/helpers.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
