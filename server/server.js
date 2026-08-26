@@ -60,7 +60,7 @@ app.post("/challenge", (req, res) => {
     authRequest.delete(address)
 
     //generate new secret
-    const secret = ethers.utils.keccak256(ethers.utils.randomBytes(8))
+    const secret = ethers.keccak256(ethers.randomBytes(8))
 
     //set secret for address
     authRequest.set(address, secret)
@@ -92,7 +92,7 @@ const io = geckos({
         const { domain, types, value } = generateTypedAuth(secret)
 
         //get recovered address from typed data and signature
-        const recoveredAddress = ethers.utils.verifyTypedData(domain, types, value, sig)
+        const recoveredAddress = ethers.verifyTypedData(domain, types, value, sig)
 
         if (recoveredAddress == address) {
             //verification successful
