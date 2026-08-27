@@ -9,10 +9,10 @@
     },
     "engineStrict": false,
     "scripts": {
-        "postinstall": "npm install --prefix server --include=dev && npm install --prefix client",
+        "postinstall": "cd server && npm install --include=dev && cd ../client && npm install && cd ..",
         "client": "cd client && npx vite",
         "server": "node start-server.js",
-        "install-server": "npm install --prefix server --include=dev"
+        "install-server": "cd server && npm install --include=dev"
     },
     "devDependencies": {
         "nodemon": "^3.1.0"

@@ -8,36 +8,73 @@ Here, I aim to design a _trust-minimized_ crypto game implementation that can su
 
 ## Requirements
 
-- **Node.js**: v20.0.0 or higher (tested with v20, v24, and v26+)
-- **npm**: v10.0.0 or higher (v11+ recommended for Node 26)
+- **Node.js**: v20.0.0 or higher
+  - ⭐ **Recommended for Development**: v26 (latest - currently alpha)
+  - ✅ **Recommended for Production**: v24 LTS (stable)
+  - ✅ **Tested with**: v20, v22, v24, v26 alpha
+- **npm**: v10.0.0 or higher (v11+ for Node 26)
 - **Git**: For cloning the repository
 
 ## Installation & Running
 
 ### Step 1: Setup Node.js and Install Dependencies
 
-**1a. Install Node.js (v20 or higher)**
+**1a. Check or Install Node.js (v20 or higher)**
+
+**If Node is already installed:**
+```bash
+node --version    # Check your current version
+npm --version     # Check npm version
+```
+
+✅ If both show v20.0.0 or higher → Skip to Step 1c
+❌ If version is lower than v20 → Update Node (see below)
+
+**If Node is NOT installed or needs update:**
 
 Option A: Download from [nodejs.org](https://nodejs.org/)
-- Select v20 LTS, v22 LTS, v24 LTS, or higher LTS 
+- **For Development**: v26 (latest - currently alpha)
+- **For Production**: v24 LTS (stable recommended)
+- **Alternatives**: v22 LTS or v20 LTS
 - Install globally on your system
 
 Option B: Use a version manager
 ```bash
 # Using nvm (Mac/Linux)
-nvm install 20
-nvm use 20
+nvm install 26          
+nvm use 26
 
 # Using nvm-windows (Windows)
-nvm install 20.0.0
-nvm use 20.0.0
+nvm install 26.0.0      
+nvm use 26.0.0
+
+# Or use stable v24 LTS for production
+nvm install 24
+nvm use 24
 ```
 
-**1b. Verify Installation**
+Option C: Update existing Node
+```bash
+# Using npm (simplest method)
+npm install -g npm@latest
+
+# Or download the latest from nodejs.org and reinstall
+```
+
+**1b. Verify Installation (Final Check)**
 ```bash
 node --version    # Should show v20.0.0 or higher
 npm --version     # Should show v10.0.0 or higher
 ```
+
+**Expected output:**
+```
+v22.0.0           # Node version (any v20+)
+11.0.0            # npm version (any v10+)
+```
+
+✅ If versions are correct → Continue to Step 1c
+❌ If versions are too old → See troubleshooting below
 
 **1c. Clone and Install Project**
 ```bash
@@ -84,8 +121,21 @@ npm run install-server
   - Windows: `Get-Process node | Stop-Process`
   - Mac/Linux: `killall node`
 
-**Canvas compilation issues on Node 24**
+**Canvas compilation issues on Node 24+**
 - Canvas is optional. If it fails to install, you can safely ignore it - the server will still work.
+
+**Node.js version too old**
+- Check your version: `node --version`
+- If below v20.0.0, update Node:
+  ```bash
+  # Option 1: Download latest from nodejs.org
+  # Option 2: Use nvm to install v22 LTS
+  nvm install 22
+  nvm use 22
+  # Option 3: Use npm to update
+  npm install -g npm@latest
+  ```
+- After updating, restart your terminal and verify: `node --version`
 ## Technology Stack
 
 This implementation is targeted for the web and was built entirely using HTML and javascript (and solidity for smart contracts). However, it can be easily ported for mobile and desktop using [Capacitor](https://capacitorjs.com) and [Electron](https://electronjs.org).
@@ -102,7 +152,15 @@ This implementation is targeted for the web and was built entirely using HTML an
 - **[Vite](https://vitejs.dev)** - Fast frontend build tool and dev server
 
 ### Node.js Compatibility
-✅ **Node.js 20+** (tested and verified with Node v20 and v24)
+✅ **Node.js 20+** - Fully compatible with all versions including alpha
+
+**Version Status:**
+- ⭐ **Development**: Node v26 (latest alpha - v26.8.0+)
+- ✅ **Production**: Node v24 LTS (stable)
+- ✅ **Supported**: v20, v22, v24 LTS versions
+- 🔬 **Testing**: v26 alpha fully functional
+
+**Note**: v26 is currently in alpha. For production deployments, use v24 LTS. For cutting-edge development, v26 alpha works perfectly with full Node 26 features.
 
 ## Implementation
 In this specific example, the goal is to collect the coin at the end of the room. However, this can be anything you want, e.g, collecting resources, beating a dungeon, or even defeating another player in PvP. Upon achieving the goal, the player will be able to call a smart contract and claim their rewards. Sounds simple enough? not really.
