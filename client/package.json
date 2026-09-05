@@ -13,12 +13,10 @@
     "@ethersproject/bytes": "^5.0.0",
     "@ethersproject/providers": "^5.0.0",
     "@typechain/ethers-v5": "^10.0.0",
-    "react-is": ">= 16.8.0",
     "rollup": ">=1.20.0 <2.0.0 || >=2.0.0 <3.0.0",
     "typechain": "^8.0.0",
     "typescript": "^4.5.4",
-    "vite": "^2.9.5",
-    "webpack": "4.x.x"
+    "vite": "^2.9.5"
   },
   "dependencies": {
     "@geckos.io/client": "^2.2.0",
@@ -36,8 +34,6 @@
     "@ethersproject/abi": "^5.0.0",
     "@ethersproject/bytes": "^5.0.0",
     "@ethersproject/providers": "^5.0.0",
-    "react-is": ">= 16.8.0",
-    "rollup": ">=1.20.0 <2.0.0 || >=2.0.0 <3.0.0",
-    "webpack": "4.x.x"
+    "rollup": ">=1.20.0 <2.0.0 || >=2.0.0 <3.0.0"
   }
 }
